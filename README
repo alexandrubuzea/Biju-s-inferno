@@ -1,0 +1,74 @@
+Copyright 2022 Buzea Alexandru-Mihai-Iulian 321CAb
+
+    After I helped Biju to solve the second homework, when he saw what kind of
+asm x86 32 bit code I used, he suddenly died of heart (maybe a heart attack,
+who knows). Therefore, he will be checked by the great boss about his value.
+He has four mandatory tasks to solve and a few more optional ones, therefore
+he must act quickly in order to be remembered by all people. Unfortunately,
+he didn't learn a lot of x86 during holiday, so he asked once more for my help.
+
+    Task 1: Sorting the albumes of Bogdan from Ploiesti
+
+    During this task, I helped Biju to sort in-place the albumes of a great
+rival of this, Bogdan from Ploiesti. They are so precious, that they are kept
+in the nodes of a linked list. Firstly, I used a loop to find the node with the
+1 value and then I implemented a double loop to find out, for each value of eax
+from 2 to n, a pointer to the node with value eax. I also used the stack to
+retain this pointer and to make links (ptr_to_eax->next = ptr_to_$(eax+1)).
+
+    Task 2: Turing's nightmare
+
+    The boss of all programmers is kinda tired to give Biju other tasks about
+his rivals, so he remembers him of the father of all computers, Alan Turing.
+Turing has given him two tasks, tasks which Biju needs to solve using only
+a stack machine (only push/pop instructions are allowed).
+    
+    Task 2.1 : lowest common multiplier - I used the known formula:
+lowest common multiplier = a * b / gcd(a, b), and then I calculated
+the value of gcd(a, b) using Euclid's algorithm (with substractions).
+
+    Task 2.2 : valid/invalid parenthesis expressions: I used a counter
+(edi) in order to store the number of open parenthesis - the number of
+closed parenthesis. The conditions for edi were: edi >= 0, always, and
+edi = 0 in the final. If at least one of these conditions is not happening
+-> invalid expression, else a valid one.
+
+    Task 3: Understanding our master's lyrics
+
+    During this task, Biju was told something unforgivable: someone (a no-namer
+called John von Neumann) has problems in understanding Salam's lyrics. Therefore,
+he needs to implement two functions in order to explain better what FS wants to
+say.
+    First function: get_words, a function which uses strtok() function from
+standard C library (because let's be honest, what language to use other than C?
+Linus Torvalds gave us the answer: https://www.youtube.com/watch?v=CYvJPra7Ebk)
+    Second function: sort - which was basically a simple use of qsort function.
+The more complicated part was to write a compare function for the words, which
+uses other two functions from libc, strcmp() and strlen().
+
+    Task 4: Calculating Tzanca the Hurricane's budget
+
+    Lastly, Biju is given an arithmetic expression to evaluate, an expression
+which apparently is the budget of Tzanca the Hurricane. I used three functions
+that are mutually recursive (expression uses term, which uses factor, which
+uses expression again) and evaluated the expression only using one iteration
+through the string. Basically, the main idea is that any expression is a
+combination of terms (which are products), and terms are a product/a division
+of factors. The factors can be simple numbers or other expressions.
+
+    BONUS: CPUID
+
+    This was kinda a simple bonus, I just read the Intel documentation and I
+found out how to get the vendor ID, or some capabilities of the current
+processor.
+
+    BONUS: Assembly 64 bit
+
+    This was also a decent bonus, the x86-64 syntax is very similar to what
+we've studied this semester at IOCLA. I used some of the extra registers 
+as counters or for other reasons.
+
+    Biju begged me to help him with two more bonuses, but unfortunately I
+wasn't able to help him in this situation, especially because other projects:
+I need to help Santa to assign gifts in advance for this year (POO second
+phase) and to help him with the other homework he has, the one from AA.
